@@ -382,14 +382,13 @@ exports._isActive = false;
  * Default values of all available options.
  */
 exports._defaults = {
-    title:   'App is running in background',
-    text:    'Doing heavy tasks.',
+    text:    'Playing radio in background',
     bigText: false,
     resume:  true,
     silent:  false,
     hidden:  true,
     color:   undefined,
-    icon:    'icon'
+    icon:    'iconspeaker'
 };
 
 /**
