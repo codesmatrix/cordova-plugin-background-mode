@@ -49,15 +49,14 @@ public class ForegroundService extends Service {
     public static final int NOTIFICATION_ID = -574543954;
 
     // Default title of the background notification
-    private static final String NOTIFICATION_TITLE =
-            "App is running in background";
+
 
     // Default text of the background notification
     private static final String NOTIFICATION_TEXT =
-            "Doing heavy tasks.";
+            "Playing radio in background";
 
     // Default icon of the background notification
-    private static final String NOTIFICATION_ICON = "icon";
+    private static final String NOTIFICATION_ICON = "iconspeaker";
 
     // Binder given to clients
     private final IBinder mBinder = new ForegroundBinder();
@@ -154,7 +153,6 @@ public class ForegroundService extends Service {
      */
     private Notification makeNotification(JSONObject settings) {
         String title    = settings.optString("title", NOTIFICATION_TITLE);
-        String text     = settings.optString("text", NOTIFICATION_TEXT);
         boolean bigText = settings.optBoolean("bigText", false);
 
         Context context = getApplicationContext();
@@ -163,7 +161,6 @@ public class ForegroundService extends Service {
                 .getLaunchIntentForPackage(pkgName);
 
         Notification.Builder notification = new Notification.Builder(context)
-                .setContentTitle(title)
                 .setContentText(text)
                 .setOngoing(true)
                 .setSmallIcon(getIconResId(settings));
