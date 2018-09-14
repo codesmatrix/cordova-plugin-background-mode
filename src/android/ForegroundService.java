@@ -152,7 +152,7 @@ public class ForegroundService extends Service {
      * @param settings The config settings
      */
     private Notification makeNotification(JSONObject settings) {
-        String title    = settings.optString("title", NOTIFICATION_TITLE);
+        String text     = settings.optString("text", NOTIFICATION_TEXT);	
         boolean bigText = settings.optBoolean("bigText", false);
 
         Context context = getApplicationContext();
